@@ -1,0 +1,6 @@
+https://dart-fss.readthedocs.io/en/latest/dart_fs.html
+
+stock_df = pd.read_html( 'http://kind.krx.co.kr/corpgeneral/corpList.do?method=download&searchType=13', header=0)[0]
+stock_df['종목코드'] = stock_df['종목코드'].map(lambda x: f'{x:0>6}')
+corp_list = stock_df[['회사명','종목코드','업종','지역']]
+code_list = corp_list['종목코드'].values
